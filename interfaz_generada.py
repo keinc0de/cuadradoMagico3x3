@@ -4,10 +4,10 @@ import tkinter.font as tkFont
 class App:
     def __init__(self, root):
         #setting title
-        root.title("undefined")
+        root.title("cuadrado magico 3x3")
         #setting window size
         width=286
-        height=219
+        height=260
         screenwidth = root.winfo_screenwidth()
         screenheight = root.winfo_screenheight()
         alignstr = '%dx%d+%d+%d' % (width, height, (screenwidth - width) / 2, (screenheight - height) / 2)
@@ -159,6 +159,14 @@ class App:
         self.lb_fila2["justify"] = "center"
         self.lb_fila2["text"] = ""
         self.lb_fila2.place(x=220,y=160,width=60,height=45)
+
+        self.lb_nose=tk.Label(root)
+        ft = tkFont.Font(family='Times',size=16)
+        self.lb_nose["font"] = ft
+        self.lb_nose["fg"] = "#333333"
+        self.lb_nose["justify"] = "center"
+        self.lb_nose["text"] = ""
+        self.lb_nose.place(x=220,y=210,width=60,height=45)
 
     def _valores(self):
         d = {

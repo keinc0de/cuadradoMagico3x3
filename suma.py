@@ -22,5 +22,3 @@ def diagonalSoNe(lista):
     for x in range(n):
         res += lista[x][(n-1)-x]
     return res
-
-# print(fila(0, [5, 4, 1]))
