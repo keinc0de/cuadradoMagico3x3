@@ -4,7 +4,7 @@ def fila(num_fila, lista):
         res += lista[num_fila][col]
     return res
 
-def Columna(num_col, lista):
+def columna(num_col, lista):
     res = 0
     for col in range(len(lista)):
         res += lista[col][num_col]
@@ -16,7 +16,7 @@ def diagonalNoSe(lista):
         res += lista[x][x]
     return res
 
-def diagonalNeSo(lista):
+def diagonalSoNe(lista):
     res = 0
     n = len(lista)
     for x in range(n):

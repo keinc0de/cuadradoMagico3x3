@@ -105,7 +105,7 @@ class App:
         self.en_22.place(x=150,y=160,width=60,height=45)
 
         self.lb_col0=tk.Label(root)
-        ft = tkFont.Font(family='Times',size=10)
+        ft = tkFont.Font(family='Times',size=16)
         self.lb_col0["font"] = ft
         self.lb_col0["fg"] = "#333333"
         self.lb_col0["justify"] = "center"
@@ -113,7 +113,7 @@ class App:
         self.lb_col0.place(x=10,y=10,width=60,height=45)
 
         self.lb_col1=tk.Label(root)
-        ft = tkFont.Font(family='Times',size=10)
+        ft = tkFont.Font(family='Times',size=16)
         self.lb_col1["font"] = ft
         self.lb_col1["fg"] = "#333333"
         self.lb_col1["justify"] = "center"

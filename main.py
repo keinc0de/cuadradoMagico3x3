@@ -6,27 +6,36 @@ class Ventana(App):
     def __init__(self, parent):
         super(Ventana, self).__init__(parent)
 
-        self.en_00.bind("<Return>", self.sumaFila0)
-        self.en_01.bind("<Return>", self.sumaFila0)
-        self.en_02.bind("<Return>", self.sumaFila0)
-        self.en_10.bind("<Return>", self.sumaFila1)
-        self.en_11.bind("<Return>", self.sumaFila1)
-        self.en_12.bind("<Return>", self.sumaFila1)
-        self.en_20.bind("<Return>", self.sumaFila2)
-        self.en_21.bind("<Return>", self.sumaFila2)
-        self.en_22.bind("<Return>", self.sumaFila2)
+        entrys = [
+            self.en_00,
+            self.en_01,
+            self.en_02,
+            self.en_10,
+            self.en_11,
+            self.en_12,
+            self.en_20,
+            self.en_21,
+            self.en_22
+        ]
+        for entry in entrys:
+            entry.bind("<Return>", self.sumaCuadros)
+        entrys[0].focus_set()
+        
 
-    def sumaFila0(self, e):
-        res = suma.fila(0, self.valoresLista())
-        self.lb_fila0.config(text=str(res))
+    def sumaCuadros(self, e):
+        valores = self.valoresLista()
+        # suma filas
+        self.lb_fila0.config(text=str(suma.fila(0, valores))) 
+        self.lb_fila1.config(text=str(suma.fila(1, valores)))
+        self.lb_fila2.config(text=str(suma.fila(2, valores)))
+        # suma columna
+        self.lb_col0.config(text=str(suma.columna(0, valores)))
+        self.lb_col1.config(text=str(suma.columna(1, valores)))
+        self.lb_col2.config(text=str(suma.columna(2, valores)))
 
-    def sumaFila1(self, e):
-        res = suma.fila(1, self.valoresLista())
-        self.lb_fila1.config(text=str(res))
+        # suma diagonales
+        self.lb_sone.config(text=str(suma.diagonalSoNe(valores)))
 
-    def sumaFila2(self, e):
-        res = suma.fila(2, self.valoresLista())
-        self.lb_fila2.config(text=str(res))
 
 
 if __name__=="__main__":
